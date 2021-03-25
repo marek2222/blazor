@@ -1,0 +1,28 @@
+﻿@page "/todo"
+
+<h3>Todo</h3>
+
+<ul>
+    @foreach (var zadanie in listaZadan)
+    {
+       <li>
+           <input type="checkbox" @bind="zadanie.Zrobione">
+        </li>
+    }
+</ul>
+
+<input placeholder="Coś do zrobienia" @bind="noweZadanie">
+<button @onclick="DodajZadanie">Dodaj zadanie</button>
+
+@code {
+    private IList<Zadanie> listaZadan = new List<Zadanie>();
+    private string noweZadanie;
+
+    private void DodajZadanie(){
+        if (!string.IsNullOrWhiteSpace(noweZadanie))
+        {
+            listaZadan.Add(new Zadanie{ Tytul = noweZadanie});
+            noweZadanie = string.Empty;
+        }
+    }
+}
