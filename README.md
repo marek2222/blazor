@@ -14,5 +14,6 @@ Test projects with blazor
 
 [Use ASP.NET Core SignalR with Blazor WebAssambly](https://docs.microsoft.com/en-us/aspnet/core/tutorials/signalr-blazor?view=aspnetcore-5.0&tabs=visual-studio-code&pivots=webassembly) in Linux
 
-    dotnet new blazorwasm -ho -o BlazorWebAssemblySignalRApp
+    dotnet new blazorwasm -ho -o _3_BlazorWebAssemblySignalRApp
+
 
