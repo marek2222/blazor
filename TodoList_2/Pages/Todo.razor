@@ -1,18 +1,19 @@
 ﻿@page "/todo"
 
-<h3>Todo</h3>
+<h3>Do zrobienia (@listaZadan.Count(zadanie => !zadanie.Zrobione))</h3>
 
 <ul>
     @foreach (var zadanie in listaZadan)
     {
        <li>
            <input type="checkbox" @bind="zadanie.Zrobione">
+           <input @bind="zadanie.Tytul">
         </li>
     }
 </ul>
-
 <input placeholder="Coś do zrobienia" @bind="noweZadanie">
 <button @onclick="DodajZadanie">Dodaj zadanie</button>
+
 
 @code {
     private IList<Zadanie> listaZadan = new List<Zadanie>();
