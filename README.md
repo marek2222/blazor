@@ -1,12 +1,18 @@
 # blazor
-Tests with blazor
+Test projects with blazor
 
 
-[Build a web app with Blazor WebAssembly and Visual Studio Code](https://docs.microsoft.com/en-us/learn/modules/build-blazor-webassembly-visual-studio-code/) Linux
+[Build a web app with Blazor WebAssembly and Visual Studio Code](https://docs.microsoft.com/en-us/learn/modules/build-blazor-webassembly-visual-studio-code/) in Linux
 
     dotnet new blazorwasm -o CICalc
 
 
-[Build a Blazor todo list app](https://docs.microsoft.com/en-us/aspnet/core/tutorials/build-a-blazor-app?view=aspnetcore-5.0) Linux
+[Build a Blazor todo list app](https://docs.microsoft.com/en-us/aspnet/core/tutorials/build-a-blazor-app?view=aspnetcore-5.0) in Linux
 
     dotnet new blazorserver -o TodoList_2
+
+
+[Use ASP.NET Core SignalR with Blazor WebAssambly](https://docs.microsoft.com/en-us/aspnet/core/tutorials/signalr-blazor?view=aspnetcore-5.0&tabs=visual-studio-code&pivots=webassembly) in Linux
+
+    dotnet new blazorwasm -ho -o BlazorWebAssemblySignalRApp
+
