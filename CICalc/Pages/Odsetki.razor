@@ -5,21 +5,23 @@
 <table class="table">
     <tr>
         <th>Kapitał początkowy</th>
-        <th></th>
+        <th><input @bind="Kapital" ></th>
     </tr>
     <tr>
         <th>Lata</th>
-        <th></th>
+        <th><input @bind="Lata" ></th>
     </tr>
     <tr>
         <th>Roczna stopa procentowa (%)</th>
-        <th></th>
+        <th><input @bind="StopaProcentowa" ></th>
     </tr>
     <tr>
         <th>Suma</th>
-        <th></th>
+        <th>@Suma</th>
     </tr>
 </table>
+
+<button class="btn btn-primary" @onclick="Kalkuluj">Kalkuluj</button>
 
 @code
 {
