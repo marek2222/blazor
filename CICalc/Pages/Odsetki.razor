@@ -1,0 +1,39 @@
+@page "/odsetki"
+
+<h1>Odsetki22 </h1>
+
+<table class="table">
+    <tr>
+        <th>Kapitał początkowy</th>
+        <th><input @bind="Kapital" ></th>
+    </tr>
+    <tr>
+        <th>Lata</th>
+        <th><input @bind="Lata" ></th>
+    </tr>
+    <tr>
+        <th>Roczna stopa procentowa (%)</th>
+        <th><input @bind="StopaProcentowa" ></th>
+    </tr>
+    <tr>
+        <th>Suma</th>
+        <th>@Suma</th>
+    </tr>
+</table>
+
+<button class="btn btn-primary" @onclick="Kalkuluj">Kalkuluj</button>
+
+@code
+{
+    private double Kapital { get; set; } = 5000;
+    private double StopaProcentowa { get; set; } = 5;
+    private int Lata { get; set; } = 10;
+    private double suma { get; set; } = 0;
+    private string Suma { get; set; }
+
+    private void Kalkuluj(){
+        var suma = Kapital * Math.Pow(1+ StopaProcentowa /(1200.0), Lata* 12);
+        Suma = suma.ToString("C");
+    }
+
+}
