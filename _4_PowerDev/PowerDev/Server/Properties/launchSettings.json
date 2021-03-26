@@ -16,7 +16,7 @@
           "ASPNETCORE_ENVIRONMENT": "Development"
         }
       },
-      "Power-Dev.Server": {
+      "PowerDev.Server": {
         "commandName": "Project",
         "dotnetRunMessages": "true",
         "launchBrowser": true,

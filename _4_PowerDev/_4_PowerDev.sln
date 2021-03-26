@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Power-Dev.Server", "Power-Dev\Server\Power-Dev.Server.csproj", "{8F7D2493-CB90-4F1C-A73F-BFDD343A4442}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PowerDev.Server", "PowerDev\Server\PowerDev.Server.csproj", "{8F7D2493-CB90-4F1C-A73F-BFDD343A4442}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Power-Dev.Client", "Power-Dev\Client\Power-Dev.Client.csproj", "{29639A09-EB84-41C5-A51B-3D7C46D70D32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PowerDev.Client", "PowerDev\Client\PowerDev.Client.csproj", "{29639A09-EB84-41C5-A51B-3D7C46D70D32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Power-Dev.Shared", "Power-Dev\Shared\Power-Dev.Shared.csproj", "{7655A807-33D7-41B8-BB4C-35974BF4D752}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PowerDev.Shared", "PowerDev\Shared\PowerDev.Shared.csproj", "{7655A807-33D7-41B8-BB4C-35974BF4D752}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

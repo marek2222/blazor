@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Shared\Power-Dev.Shared.csproj" />
+    <ProjectReference Include="..\Shared\PowerDev.Shared.csproj" />
   </ItemGroup>
 
 </Project>
