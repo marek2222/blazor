@@ -17,3 +17,7 @@ Test projects with blazor
     dotnet new blazorwasm -ho -o _3_BlazorWebAssemblySignalRApp
 
 
+[Blazor 102 – Zacznijmy od WebAssembly](https://www.power-dev.pl/2021/02/07/blazor-102-zacznijmy-od-webassembly/) in VS
+
+
+
