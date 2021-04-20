@@ -3,12 +3,30 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadzenBlazorFileUpload", "RadzenBlazorFileUpload\RadzenBlazorFileUpload.csproj", "{C5D4B640-319A-4193-8718-EE0D0A5D1B48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RadzenBlazorFileUpload", "RadzenBlazorFileUpload\RadzenBlazorFileUpload.csproj", "{C5D4B640-319A-4193-8718-EE0D0A5D1B48}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B15215C9-5599-4F88-84C2-2061166B4F7A} = {B15215C9-5599-4F88-84C2-2061166B4F7A}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0953D228-2C39-4724-95DA-491B847502CE}"
 	ProjectSection(SolutionItems) = preProject
 		Desc.txt = Desc.txt
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWasmTests.Server", "BlazorWasmTests\Server\BlazorWasmTests.Server.csproj", "{A1891DB8-EF29-47BA-B878-1A09C6984260}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWasmTests.Client", "BlazorWasmTests\Client\BlazorWasmTests.Client.csproj", "{2A9C2A4D-C124-4DDB-895B-502C658C62DD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWasmTests.Shared", "BlazorWasmTests\Shared\BlazorWasmTests.Shared.csproj", "{1E772C7B-309F-44AA-8EAD-B6BA618D93A3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BlazorFiles", "BlazorFiles", "{B8128269-91AF-4253-8323-143ACA94072A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorFiles.Api", "BlazorFiles\BlazorFiles.Api\BlazorFiles.Api.csproj", "{B15215C9-5599-4F88-84C2-2061166B4F7A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DF5EED16-F07C-4D08-B4AD-FA6AF6A54D7A} = {DF5EED16-F07C-4D08-B4AD-FA6AF6A54D7A}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorFiles.Client", "BlazorFiles\BlazorFiles.Client\BlazorFiles.Client.csproj", "{DF5EED16-F07C-4D08-B4AD-FA6AF6A54D7A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,9 +38,33 @@ Global
 		{C5D4B640-319A-4193-8718-EE0D0A5D1B48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5D4B640-319A-4193-8718-EE0D0A5D1B48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5D4B640-319A-4193-8718-EE0D0A5D1B48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1891DB8-EF29-47BA-B878-1A09C6984260}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1891DB8-EF29-47BA-B878-1A09C6984260}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1891DB8-EF29-47BA-B878-1A09C6984260}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1891DB8-EF29-47BA-B878-1A09C6984260}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A9C2A4D-C124-4DDB-895B-502C658C62DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A9C2A4D-C124-4DDB-895B-502C658C62DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A9C2A4D-C124-4DDB-895B-502C658C62DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A9C2A4D-C124-4DDB-895B-502C658C62DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E772C7B-309F-44AA-8EAD-B6BA618D93A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E772C7B-309F-44AA-8EAD-B6BA618D93A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E772C7B-309F-44AA-8EAD-B6BA618D93A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E772C7B-309F-44AA-8EAD-B6BA618D93A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B15215C9-5599-4F88-84C2-2061166B4F7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B15215C9-5599-4F88-84C2-2061166B4F7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B15215C9-5599-4F88-84C2-2061166B4F7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B15215C9-5599-4F88-84C2-2061166B4F7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF5EED16-F07C-4D08-B4AD-FA6AF6A54D7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF5EED16-F07C-4D08-B4AD-FA6AF6A54D7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF5EED16-F07C-4D08-B4AD-FA6AF6A54D7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF5EED16-F07C-4D08-B4AD-FA6AF6A54D7A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B15215C9-5599-4F88-84C2-2061166B4F7A} = {B8128269-91AF-4253-8323-143ACA94072A}
+		{DF5EED16-F07C-4D08-B4AD-FA6AF6A54D7A} = {B8128269-91AF-4253-8323-143ACA94072A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E184BAF8-A902-42AE-B823-105F4812EE39}

@@ -3,3 +3,11 @@ Project:
 	RadzenBlazorFileUpload
 on base
 	Multiple File Upload using Radzen Blazor	https://www.youtube.com/watch?v=EZVryHYBHr8
+
+Project: 
+	BlazorWasmTests
+on base
+	Uploading Files In Blazor	https://www.mikesdotnetting.com/article/341/uploading-files-in-blazor
+
+
+	
