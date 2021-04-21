@@ -60,18 +60,11 @@
 
         using var content = new MultipartFormDataContent();
 
-        //foreach (var file in e.GetMultipleFiles(maxAllowedFiles))
-        //{
         var file = e.File;
         if (uploadResults.SingleOrDefault(f => f.FileName == file.Name) is null)
         {
             var fileContent = new StreamContent(file.OpenReadStream());
 
-            //files.Add(
-            //    new File()
-            //    {
-            //        Name = file.Name,
-            //    });
             plik.Name = file.Name;
 
             if (file.Size < maxFileSize)

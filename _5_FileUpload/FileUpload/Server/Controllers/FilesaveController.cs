@@ -36,18 +36,16 @@ public class FilesaveController : ControllerBase
         foreach (var file in files)
         {
             var uploadResult = new UploadResult();
-            string trustedFileNameForFileStorage;
+            //string trustedFileNameForFileStorage;
             var untrustedFileName = file.FileName;
             uploadResult.FileName = untrustedFileName;
-            var trustedFileNameForDisplay =
-                WebUtility.HtmlEncode(untrustedFileName);
+            var trustedFileNameForDisplay = WebUtility.HtmlEncode(untrustedFileName);
 
             if (filesProcessed < maxAllowedFiles)
             {
                 if (file.Length == 0)
                 {
-                    logger.LogInformation("{FileName} length is 0",
-                        trustedFileNameForDisplay);
+                    logger.LogInformation("{FileName} length is 0", trustedFileNameForDisplay);
                     uploadResult.ErrorCode = 1;
                 }
                 else if (file.Length > maxFileSize)
@@ -61,17 +59,14 @@ public class FilesaveController : ControllerBase
                 {
                     try
                     {
-                        trustedFileNameForFileStorage = Path.GetRandomFileName();
-                        var path = Path.Combine(env.ContentRootPath,
-                            env.EnvironmentName, "unsafe_uploads",
-                            trustedFileNameForFileStorage);
+                        var path = Path.Combine(env.ContentRootPath, env.EnvironmentName, 
+                            "unsafe_uploads", trustedFileNameForDisplay);
                         using MemoryStream ms = new();
                         await file.CopyToAsync(ms);
                         await System.IO.File.WriteAllBytesAsync(path, ms.ToArray());
-                        logger.LogInformation("{FileName} saved at {Path}",
-                            trustedFileNameForDisplay, path);
+                        logger.LogInformation("{FileName} saved at {Path}", trustedFileNameForDisplay, path);
                         uploadResult.Uploaded = true;
-                        uploadResult.StoredFileName = trustedFileNameForFileStorage;
+                        uploadResult.StoredFileName = trustedFileNameForDisplay;
                     }
                     catch (IOException ex)
                     {
