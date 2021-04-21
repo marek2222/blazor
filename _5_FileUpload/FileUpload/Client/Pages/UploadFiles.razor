@@ -9,21 +9,21 @@
 <p>
     <label>
         Upload up to @maxAllowedFiles files:
-        <InputFile OnChange="@OnInputFileChange" multiple />
+        <InputFile OnChange="@OnInputFileChange" />
     </label>
 </p>
 
-@if (files.Count > 0)
+@if (!string.IsNullOrEmpty(plik.Name))
 {
     <div class="card">
         <div class="card-body">
             <ul>
-                @foreach (var file in files)
-                {
+                @*@foreach (var file in files)
+                {*@
                     <li>
-                        File: @file.Name
+                        File: @plik.Name
                         <br>
-                        @if (FileUpload(uploadResults, file.Name, logger, out var result))
+                        @if (FileUpload(uploadResults, plik.Name, logger, out var result))
                         {
                             <span>
                                 Stored File Name: @result.StoredFileName
@@ -37,14 +37,15 @@
                             </span>
                         }
                     </li>
-                }
+                @*}*@
             </ul>
         </div>
     </div>
 }
 
 @code {
-    private IList<File> files = new List<File>();
+    //private IList<File> files = new List<File>();
+    private File plik = new File();
     private IList<UploadResult> uploadResults = new List<UploadResult>();
     private int maxAllowedFiles = 3;
     private bool shouldRender;
@@ -59,40 +60,40 @@
 
         using var content = new MultipartFormDataContent();
 
-        foreach (var file in e.GetMultipleFiles(maxAllowedFiles))
+        //foreach (var file in e.GetMultipleFiles(maxAllowedFiles))
+        //{
+        var file = e.File;
+        if (uploadResults.SingleOrDefault(f => f.FileName == file.Name) is null)
         {
-            if (uploadResults.SingleOrDefault(
-                f => f.FileName == file.Name) is null)
+            var fileContent = new StreamContent(file.OpenReadStream());
+
+            //files.Add(
+            //    new File()
+            //    {
+            //        Name = file.Name,
+            //    });
+            plik.Name = file.Name;
+
+            if (file.Size < maxFileSize)
             {
-                var fileContent = new StreamContent(file.OpenReadStream());
+                content.Add(
+                    content: fileContent,
+                    name: "\"files\"",
+                    fileName: file.Name);
 
-                files.Add(
-                    new File()
+                upload = true;
+            }
+            else
+            {
+                logger.LogInformation("{FileName} not uploaded", file.Name);
+
+                uploadResults.Add(
+                    new UploadResult()
                     {
-                        Name = file.Name,
+                        FileName = file.Name,
+                        ErrorCode = 6,
+                        Uploaded = false,
                     });
-
-                if (file.Size < maxFileSize)
-                {
-                    content.Add(
-                        content: fileContent,
-                        name: "\"files\"",
-                        fileName: file.Name);
-
-                    upload = true;
-                }
-                else
-                {
-                    logger.LogInformation("{FileName} not uploaded", file.Name);
-
-                    uploadResults.Add(
-                        new UploadResult()
-                        {
-                            FileName = file.Name,
-                            ErrorCode = 6,
-                            Uploaded = false,
-                        });
-                }
             }
         }
 
