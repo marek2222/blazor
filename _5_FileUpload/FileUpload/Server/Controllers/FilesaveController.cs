@@ -24,9 +24,13 @@ public class FilesaveController : ControllerBase
     }
 
     [HttpPost]
+    [Route("PostFile")]
+
     public async Task<ActionResult<IList<UploadResult>>> PostFile(
-        [FromForm] IEnumerable<IFormFile> files)
+        [FromForm] string nazwaUrl, IEnumerable<IFormFile> files)
     {
+        string nazwa = nazwaUrl;
+
         var maxAllowedFiles = 3;
         long maxFileSize = 1024 * 1024 * 15;
         var filesProcessed = 0;
@@ -36,7 +40,6 @@ public class FilesaveController : ControllerBase
         foreach (var file in files)
         {
             var uploadResult = new UploadResult();
-            //string trustedFileNameForFileStorage;
             var untrustedFileName = file.FileName;
             uploadResult.FileName = untrustedFileName;
             var trustedFileNameForDisplay = WebUtility.HtmlEncode(untrustedFileName);
@@ -50,8 +53,7 @@ public class FilesaveController : ControllerBase
                 }
                 else if (file.Length > maxFileSize)
                 {
-                    logger.LogInformation("{FileName} of {Length} bytes is " +
-                        "larger than the limit of {Limit} bytes",
+                    logger.LogInformation("{FileName} of {Length} bytes is " + "larger than the limit of {Limit} bytes",
                         trustedFileNameForDisplay, file.Length, maxFileSize);
                     uploadResult.ErrorCode = 2;
                 }
