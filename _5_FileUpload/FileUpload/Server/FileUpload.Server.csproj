@@ -13,5 +13,9 @@
     <ProjectReference Include="..\Shared\FileUpload.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Development\unsafe_uploads\" />
+  </ItemGroup>
+
 
 </Project>
