@@ -21,12 +21,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWasmTests.Shared", "B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BlazorFiles", "BlazorFiles", "{B8128269-91AF-4253-8323-143ACA94072A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorFiles.Api", "BlazorFiles\BlazorFiles.Api\BlazorFiles.Api.csproj", "{B15215C9-5599-4F88-84C2-2061166B4F7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorFiles.Api", "BlazorFiles\BlazorFiles.Api\BlazorFiles.Api.csproj", "{B15215C9-5599-4F88-84C2-2061166B4F7A}"
 	ProjectSection(ProjectDependencies) = postProject
 		{DF5EED16-F07C-4D08-B4AD-FA6AF6A54D7A} = {DF5EED16-F07C-4D08-B4AD-FA6AF6A54D7A}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorFiles.Client", "BlazorFiles\BlazorFiles.Client\BlazorFiles.Client.csproj", "{DF5EED16-F07C-4D08-B4AD-FA6AF6A54D7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorFiles.Client", "BlazorFiles\BlazorFiles.Client\BlazorFiles.Client.csproj", "{DF5EED16-F07C-4D08-B4AD-FA6AF6A54D7A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FileUpload", "FileUpload", "{B6717F2B-5769-4387-A9CD-4E30FAED8491}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
