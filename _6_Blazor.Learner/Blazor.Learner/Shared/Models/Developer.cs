@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Blazor.Learner.Shared.Models
 {
-    class Developer
+    public class Developer
     {
         public int Id { get; set; }
         public string FirstName { get; set; }
